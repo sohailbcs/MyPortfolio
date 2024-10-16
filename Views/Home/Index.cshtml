@@ -1,0 +1,792 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <style>
+        /* General icon container and text styling */
+        .icon-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .icon-item {
+            position: relative;
+            margin: 0 10px;
+        }
+
+            .icon-item img {
+                transition: all 0.3s ease;
+            }
+
+        .icon-text {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 14px;
+            color: #000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: linear-gradient(to top left, #f97254 30%, #e1386c 70%);
+            padding: 4px 10px;
+            border-radius:20px;
+        }
+
+        .icon-text2 {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 14px;
+            color: #000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: linear-gradient(to top left, #f97254 30%, #e1386c 70%);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        /* Show the text when hovering over the icon */
+        .icon-item:hover .icon-text2 {
+            opacity: 1;
+        }
+
+        /* Show the text when hovering over the icon */
+        .icon-item:hover .icon-text {
+            opacity: 1;
+        }
+
+        /* Optional: Scale the image on hover */
+        .icon-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .caption:before, .caption:after {
+
+        
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "";
+            background-size: contain;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            color: wheat;
+            background-image: url(https://aamirakbar.com/quote-white.0024a3759ac0fb1d.svg);
+        }
+
+            .caption:after{
+            margin-left: 5px;
+            margin-bottom: -25px;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+        }
+        /* model for popup */
+
+        .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #ff6654;
+    color:white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+       
+    </style>
+</head>
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+        <img src="https://aamirakbar.com/banner.8767d7913611deb3.svg" alt="" data-aos="fade-in">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h2>Muhammad Sohail<br></h2>
+            <p>I'm <span class="typed" data-typed-items="ASP.Net Core (MVC), Full Stack Developer, WordPress Developer">Developer</span></p>
+            <div class="social-links">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+
+    </section><!-- /Hero Section -->
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2 style="color:black;">About</h2>
+
+        </div><!-- End Section Title -->
+
+        <div class="container-fluid " style="background:#008080;  clip-path: polygon(0 calc(4% - 1vw), 100% 0, 100% calc(100% - 2vw), 0 100%); " data-aos="fade-up" data-aos-delay="100">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h2 class="devloper"></h2>
+            <h2 class="text-white text-center caption" data-aos="fade-up" data-aos-delay="100">
+                Unifying academia and industry, I bring my full-stack dev skills, WordPress Dev,  to create impactful solutions.
+         </h2>
+         <br />
+         <br />
+            <div class="row gy-4 justify-content-between">
+                <div class="col-lg-4 m-lg-5" style="b" >
+                    <div class="card rounded-top " style=" background:#007272; position: relative; box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038; height:500px; border:none; ">
+                        <div class="rounded-top" style="height:150px;  background:#007272;">
+                            <div class="position-absolute top-0 start-50 translate-middle-x">
+                                <img class="card-img-top rounded-circle" width="200px" height="200px" src="assets/img/sohailkhan.jpg" alt="Card image cap">
+                            </div>
+                        </div>
+                        
+                        <div class="card-body bg-white pt-5  text-center">
+                            <h5 class="card-title  pt-5">Muhammad Sohail</h5>
+                            <p class="card-text">Hello, I'm Muhammad Sohail, an ASP.NET Core (MVC) Full Stack Developer and WordPress Developer. I create user-friendly websites and applications, delivering high-quality solutions within budget.</p>
+                            <a href="#contact" class="btn btn-outline-secondary rounded-5 ">Contact</a>
+
+                        </div>
+                        <div class="d-flex rounded-bottom justify-content-around align-content-center" style="background:#353839; height:80px;">
+                            <div class=" icon-item align-content-center">
+                               <a href="https://www.linkedin.com/in/sohailbcs/" target="_blank">
+                                <img src="assets/img/Linkedin.png"  width="50px" height="50px" alt="Alternate Text" />
+                                <span class="icon-text2">Linkedin</span>
+                                </a>
+                            </div>
+                            <div class=" icon-item align-content-center">
+                                <a href="https://wa.me/923473687086" target="_blank">
+                                <img src="assets/img/w.png" width="50px" height="50px" alt="Alternate Text" />
+                                <span class="icon-text2">Whatsapp</span>
+                                </a>
+                            </div>
+                            <div class="align-content-center  icon-item"  >
+                               <a href="#" class="btn btn-outline-secondary rounded-5 text-white" data-bs-toggle="modal" data-bs-target="#viewFileModal" style="    font-family: Poppins,sans-serif;
+    font-weight: 400;
+    font-size: 20px">RESUME</a>
+                               <span class="icon-text2">VIew & Download</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 content">
+                    <br />
+              
+                    <h3 style="color:white;">Full-Stack Dev:</h3>
+                
+                    <p style="color:white;">
+                        As a Dot Net Full Stack Developer, I bring a comprehensive range of technical skills across various platforms and technologies. My expertise extends to
+                        databases like SQL Server, MySQL, and MongoDB, allowing me to manage data effectively. I am well-versed in ASP.NET Core (MVC) and Web APIs, ensuring 
+                        seamless integration between front-end and back-end systems.
+
+                        On the front-end, my proficiency in HTML, CSS, Bootstrap, JavaScript, and React.js enables me to create dynamic, responsive, and visually appealing user
+                        interfaces. These skills allow me to design, develop, and deploy robust web applications that deliver both functionality and a superior user experience.
+                    </p>
+                    <h3 style="color:white;">WordPress Dev:</h3>
+
+                    <p style="color:white;">
+                         My area of expertise as a WordPress developer is creating unique, responsive websites that are suited to particular customer requirements. 
+                         My skills include developing and adjusting custom post kinds, plugins, and themes, so the websites I build are both
+                         both practical and aesthetically pleasing. My proficiency with PHP, HTML, CSS, and JavaScript enables me to expand WordPress' functionality.
+                         as well as offer a smooth user experience.
+                         I concentrate on providing scalable, safe, and SEO-friendly solutions for anything from creating new WordPress websites to improving ones
+                         that already exist.Every site is simple to maintain and provides a seamless user experience for administrators and visitors because to my
+                         attention to detail.
+                    </p>
+
+                </div>
+            </div>
+         <br />
+         <br />
+         <br />
+        </div>
+
+    </section><!-- /About Section -->
+    
+    <!-- Services Section -->
+    <section id="services" class="services section" >
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up" style="clip-path: polygon(0 calc(4% - 1vw), 100% 0, 100% calc(100% - 2vw), 0 100%);">
+            <h2 style="color:black;">Skils</h2>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container-fluid" style="background:#ff6654; clip-path: polygon(0 calc(4% - 1vw), 100% 0, 100% calc(100% - 2vw), 0 100%); ">
+            <br/>
+            <br />
+            <br />
+            <br />
+            <br />
+            <h2 class="text-white text-center caption" data-aos="fade-up" data-aos-delay="100">
+                I specialize in  Indursty , focusing on Web developement & wordpress developement with expertise in APS.Net Core.
+            </h2>
+            <br />
+            <div class="row justify-content-center" >
+               <div class="col-md-3 ml-4 d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="100">
+                  <img src="https://aamirakbar.com/assets/icons/imgs/academics.svg" width="250px" height="250px" alt="my academic" />
+                <h5 class="text-white text-center">BS Computer Science</h5>
+               </div>
+
+                <div class="col-md-3 mt-4 ml-4 d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://aamirakbar.com/assets/icons/imgs/fullstack.svg" width="200px" height="200px" alt="my academic" />
+                    
+                    <h5 class="mt-4 text-white text-center">Full stack developer</h5>
+                </div>   
+                <div class="col-md-3 mt-4 ml-4 d-flex flex-column align-items-center" data-aos="fade-up" data-aos-delay="300">
+                    <img src="~/assets/img/sohailwordpressdeveloper.png" width="200px" height="200px" alt="my academic" />
+                    <h5 class="mt-4 text-white text-center">WordPress Developer</h5>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row justify-content-center " data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-4  ">
+                    <h2 class="text-white text-center">Tools and Technologies</h2
+                </div>
+
+            </div>
+
+               
+            <div class="row justify-content-center gy-4" data-aos="fade-up" data-aos-delay="200">
+
+                <!-- Column 1 -->
+                <div class="col-lg-5 bg-white m-4 p-3 rounded" style=" box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="d-flex justify-content-center text-black">
+                        <h2 style="color:black" >Front End Developer</h2>
+                    </div>
+                    <br />
+             <br />
+                  
+                   <div class="row justify-content-center icon-container">
+    <div class="col-md-2 col-sm-6 d-flex flex-column align-items-center icon-item">
+        <img src="assets/img/HTML-CSS.png" class="pb-4" width="100px" height="100px" alt="HTML-CSS" />
+        <span class="icon-text">HTML & CSS</span>
+    </div>
+    <div class="col-md-2 col-sm-6 d-flex flex-column align-items-center icon-item">
+        <img src="assets/img/JS.png" width="100px" height="65px" alt="JavaScript" />
+        <span class="icon-text">JavaScript</span>
+    </div>
+    <div class="col-md-1 col-sm-6 d-flex flex-column align-items-center icon-item">
+        <img src="assets/img/bootstrap.jpeg" width="70px" height="70px" alt="Bootstrap" />
+        <span class="icon-text">Bootstrap</span>
+    </div>
+    <div class="col-md-1 col-sm-6 d-flex flex-column align-items-center icon-item">
+        <img src="assets/img/ASP.Net.jpeg" width="60px" height="50px" alt="ASP.NET" />
+        <span class="icon-text">ASP.NET</span>
+    </div>
+    <div class="col-md-2 col-sm-6 d-flex flex-column align-items-center icon-item">
+        <img src="assets/img/React.png" width="60px" height="50px" alt="React" />
+        <span class="icon-text">ReactJs</span>
+    </div>
+
+</div>
+
+                </div>
+
+
+                <!-- Column 2 -->
+<div class="col-lg-5 bg-white m-4 p-3 rounded" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" data-aos="fade-up" data-aos-delay="100">
+    <div class="d-flex justify-content-center">
+        <h2 style="color:black">Back End Developer</h2>
+    </div>
+    <br />
+    <br />
+ 
+    <div class="d-flex justify-content-center icon-container">
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/SQL.png" class="pb-3" width="80px" height="80px" alt="SQL" />
+                <span class="icon-text">SQL</span>
+            </div>
+            <div class="col-md-1 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/Cc.png" width="100px" height="65px" alt="C#" />
+                <span class="icon-text">C#</span>
+            </div>
+            <div class="col-md-2 col-sm-6 d-flex mt-3 flex-column align-items-center icon-item">
+                <img src="assets/img/node.png" width="100px" height="70px" alt="Node.js" />
+                <span class="icon-text">Node.js</span>
+            </div>
+            <div class="col-md-2 col-sm-6 d-flex mt-3 flex-column align-items-center icon-item">
+                <img src="assets/img/PHP.png" width="60px" height="50px" alt="PHP" />
+                <span class="icon-text">PHP</span>
+            </div>
+            <div class="col-md-2 col-sm-6 d-flex mt-3 flex-column align-items-center icon-item">
+                <img src="assets/img/ASP.Net.jpeg" width="60px" height="50px" alt="ASP.NET" />
+                <span class="icon-text">ASP.NET</span>
+            </div>
+        </div>
+    </div>
+     <br />
+  
+   
+</div>
+
+
+<!-- Column 3 -->
+<div class="col-lg-5 bg-white m-4 p-3 rounded" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" data-aos="fade-up" data-aos-delay="100">
+    <div class="d-flex justify-content-center text-black">
+        <h2 style="color:black">WordPress Developer</h2>
+    </div>
+    <br />
+    <br />
+   
+    <div class="d-flex justify-content-center icon-container">
+        <div class="row justify-content-center">
+            <div class="col-md-1 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/WordPress1.png" class="pb-3" width="50px" height="70px" alt="WordPress" />
+                <span class="icon-text">WordPress</span>
+            </div>
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/coustomwordpress.png" width="50px" height="60px" alt="Custom WordPress" />
+                <span class="icon-text">Custom Coding</span>
+            </div>
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/Elementor.png" width="60px" height="50px" alt="Elementor" />
+                <span class="icon-text">Elementor</span>
+            </div>
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/woo.png" width="80px" height="65px" alt="WooCommerce" />
+                <span class="icon-text">WooCommerce</span>
+            </div>
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/blog.png" width="60px" height="50px" alt="Blogging" />
+                <span class="icon-text">Blogging</span>
+            </div>
+        </div>
+    </div>
+     
+  <br />
+</div>
+
+<!-- Column 4 -->
+<div class="col-lg-5 bg-white m-4 p-3 rounded" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" data-aos="fade-up" data-aos-delay="100">
+    <div class="d-flex justify-content-center text-black">
+        <h2 style="color:black">Other Computer Skills</h2>
+    </div>
+    <br />
+    <br />
+   
+   
+
+    <div class="d-flex justify-content-center icon-container">
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/GitHub.png" class="pb-3" width="70px" height="90px" alt="GitHub" />
+                         
+          
+                <span class="icon-text">GitHub</span>
+            </div>
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/Git.png" width="70px" height="70px" alt="Git" />
+                <span class="icon-text">Git</span>
+            </div>
+            <div class="col-md-2 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/canva.jpeg" width="70px" height="70px" alt="Canva" />
+                <span class="icon-text">Canva</span>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 d-flex flex-column align-items-center icon-item">
+                <img src="assets/img/MsOffice.jpeg" width="100px" height="70px" alt="Microsoft Office" />
+                <span class="icon-text">Microsoft Office</span>
+            </div>
+
+        </div>
+
+    </div>
+    <br />
+   
+</div>
+
+              
+            </div>
+<div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+        </div>
+
+    
+    </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2 style="color:black;">Project</h2>
+         
+        </div><!-- End Section Title -->
+
+        <div class="container-fluid"  style="background:#008080; clip-path: polygon(0 calc(4% - 1vw), 100% 0, 100% calc(100% - 2vw), 0 100%);" >
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                <ul class="portfolio-filters rounded-top isotope-filters p-3 " data-aos="fade-up" data-aos-delay="100" style="background:#00cccc; color:white;">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">CRM</li>
+                    <li data-filter=".filter-product">School</li>
+                    <li data-filter=".filter-branding">City</li>
+                    <li data-filter=".filter-books">WordPress</li>
+                </ul><!-- End Portfolio Filters -->
+
+                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/crddash.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>CRM Dashboard</h4>
+                                <p>Customer Relationship Management Dashboard</p>
+                                <a href="assets/img/portfolio/crmdash.png" title="CRM Dashboard" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/schdash.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Dashboard</h4>
+                                <p>School Management System Dashboard</p>
+                                <a href="assets/img/portfolio/schdash.png" title="Dashboard" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/citydash.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Dashboard</h4>
+                                <p>Create A fully functional Plot selling website</p>
+                                <a href="assets/img/portfolio/citydash.png" title="Dashboard" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/wordhome.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Home</h4>
+                                <p>create a fully functional and responsive website</p>
+                                <a href="assets/img/portfolio/wordhome.png" title="Home" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/crmbulk.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Add Lead</h4>
+                                <p>Customer Relationship Management Add Lead</p>
+                                <a href="assets/img/portfolio/crmbulk.png " title="Add Lead" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/schteacher.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Teacher Dashboard </h4>
+                                <p>School Management System Teacher Dashboard </p>
+                                <a href="assets/img/portfolio/schteacher.png" title="Teacher Dashboard " data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/bookingcity.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Booking Plot</h4>
+                                <p>Create A fully functional Plot selling website</p>
+                                <a href="assets/img/portfolio/bookingcity.png" title="Booking Plot" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/wordportfolio.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Project</h4>
+                                <p>create a fully functional and responsive website</p>
+                                <a href="assets/img/portfolio/wordportfolio.png" title="Project" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/crmcustm.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Lead Summary</h4>
+                                <p>Customer Relationship Management Add Summary</p>
+                                <a href="assets/img/portfolio/crmcustm.png" title="Lead Summary" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/parentdash.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Parent Dashboard </h4>
+                                <p>School Management System Parent Dashboard</p>
+                                <a href="assets/img/portfolio/parentdash.png" title="Parent Dashboard " data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/instalment.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Installment</h4>
+                                <p>Create A fully functional Plot selling website</p>
+                                <a href="assets/img/portfolio/instalment.png" title="Installment" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+
+                    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                        <div class="portfolio-content h-100">
+                            <img src="assets/img/portfolio/wordservers.png" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Servers</h4>
+                                <p>create a fully functional and responsive website</p>
+                                <a href="assets/img/portfolio/wordservers.png" title="Servers" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="#portfolio" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Portfolio Item -->
+                </div><!-- End Portfolio Container -->
+                    <br /><br /><br /><br />
+
+            </div>
+
+        </div>
+
+    </section><!-- /Portfolio Section -->
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2 style="color:black;">Contact</h2>
+        </div><!-- End Section Title -->
+
+        <div class="container-fluid" style="background:#008080; clip-path: polygon(0 calc(4% - 1vw), 100% 0, 100% calc(100% - 2vw), 0 100%);" data-aos="fade-up" data-aos-delay="100">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+            <div class="info-wrap rounded-top" data-aos="fade-up" style="background:#ff6654;  box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038; color:white;" data-aos-delay="200">
+                <div class="row gy-5">
+
+                    <div class="col-lg-4" >
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <b> <h3>Address</h3></b>
+                                <b><a href="https://www.google.com/maps/search/?api=1&query=Islamabad+I-8+Markaz+Pakistan" target="_blank" style="color:white; text-decoration:none;">Islamabad I-8 Markaz Pakistan</a></b>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-lg-4">
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <b>   <h3>Call<br></h3> </b>
+                                <b><a href="https://wa.me/923473687086" target="_blank" style="color:white; text-decoration:none;">+923473687086</a></b>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-lg-4">
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <b>  <h3>Email</h3> </b>
+                                <b> <a href="mailto:sohailkan128786@gmail.com?subject=Contact%20via%20Website" style="color:white;">sohailkan128786@gmail.com</a> </b>
+                            </div>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                </div>
+            </div>
+
+<form id="contactForm" style="background:#ff6654; box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" method="post" action="/Home/SubmitContactForm" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+    <div class="row gy-4">
+        <div class="col-md-6">
+            <input type="text" name="Name" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" class="form-control bg-white" placeholder="Your Name" required="">
+        </div>
+        <div class="col-md-6">
+            <input type="email" name="Email" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" class="form-control bg-white" placeholder="Your Email" required="">
+        </div>
+        <div class="col-md-12">
+            <input type="text" name="Subject" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" class="form-control bg-white" placeholder="Subject" required="">
+        </div>
+        <div class="col-md-12">
+            <textarea class="form-control bg-white" style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" name="Message" rows="6" placeholder="Message" required=""></textarea>
+        </div>
+        <div class="col-md-12 text-center">
+            <button style="box-shadow: 0 27px 24px #0003, 0 40px 77px #00000038;" class="btn btn-outline-secondary" type="submit">Send Message</button>
+        </div>
+    </div>
+</form>
+<!-- Popup Modal -->
+<div id="successModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" style="cursor:pointer; float:right;">&times;</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+
+        <br /><br /><br />
+        <br /><br /><br />
+        </div>
+        <!-- Modal Structure -->
+    <div class="modal fade" id="viewFileModal" tabindex="-1" aria-labelledby="viewFileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#ff6654; color:white">
+                    <h5 class="modal-title text-white" id="viewFileModalLabel">View and Download Resume</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="resumeFrame" src="" style="width: 100%; height: 400px;" frameborder="0"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <a id="downloadLink" href="#" class="btn btn-primary" style="background:#008080; color:white;" download>Download Resume</a>
+                    <button type="button" class="btn btn-secondary" style="background:#ff6654; color:white;" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#contactForm').submit(function(e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'), // Get the form's action URL
+            data: $(this).serialize(), // Serialize the form data
+            success: function(response) {
+                // Show success modal with message
+                $('#modalMessage').text(response.message);
+                $('#successModal').fadeIn();
+
+                // Close the modal after 3 seconds
+                setTimeout(function() {
+                    $('#successModal').fadeOut();
+                }, 3000);
+
+                $('#contactForm')[0].reset(); // Reset the form
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                let errors = xhr.responseJSON.errors;
+                let errorMsg = '';
+                for (let key in errors) {
+                    if (errors.hasOwnProperty(key)) {
+                        errorMsg += errors[key].join('<br>') + '<br>';
+                    }
+                }
+                $('#responseMessage').html('<div class="alert alert-danger">' + errorMsg + '</div>');
+            }
+        });
+
+        // Close the modal when the close button is clicked
+        $('.close').on('click', function() {
+            $('#successModal').fadeOut();
+        });
+    });
+});
+</script>
+
+
+    <script>
+        // Path to your PDF file in the assets folder
+        const pdfPath ='/assets/img/DotNetCv.pdf'; // Change this to the actual path
+
+        // Wait for the DOM to fully load before attaching event listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set the src of the iframe and the download link when the modal is shown
+            document.getElementById('viewFileModal').addEventListener('show.bs.modal', function () {
+                const resumeFrame = document.getElementById('resumeFrame');
+                const downloadLink = document.getElementById('downloadLink');
+                
+                // Set the src for the iframe to view the PDF
+                resumeFrame.src = pdfPath; 
+
+                // Set the href for the download link
+                downloadLink.href = pdfPath; 
+            });
+        });
+    </script>
+
+    </section><!-- /Contact Section -->
+
+</main>
